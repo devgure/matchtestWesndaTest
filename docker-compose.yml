@@ -2,55 +2,42 @@ version: '3.8'
 services:
   backend:
     build: ./backend
-    ports:
-      - "3000:3000"
+    expose:
+      - "3000"
     environment:
       - DATABASE_URL=mongodb://mongo:27017/matchai
       - JWT_SECRET=${JWT_SECRET}
     depends_on:
       - mongo
-      - redis
 
   web:
     build: ./web
-    ports:
-      - "3002:80"
-    depends_on:
-      - backend
+    expose:
+      - "80"
+    # No ports — only exposed via nginx
 
   admin:
     build: ./admin
-    ports:
-      - "3001:80"
-    depends_on:
-      - backend
-
-  ai-service:
-    build: ./ai-service
-    ports:
-      - "8000:8000"
+    expose:
+      - "80"
+    # No ports — only exposed via nginx
 
   mongo:
     image: mongo:6
-    ports:
-      - "27017:27017"
     volumes:
       - mongo_data:/data/db
-
-  redis:
-    image: redis:alpine
-    ports:
-      - "6379:6379"
 
   nginx:
     image: nginx:alpine
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - web
       - admin
+      - backend
 
 volumes:
   mongo_data:
