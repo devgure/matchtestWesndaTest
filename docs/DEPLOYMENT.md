@@ -35,3 +35,15 @@ npx prisma migrate dev --name init
 ```bash
 docker-compose build
 docker-compose up -d
+
+#  start Mobile App
+cd mobile
+
+# Install dependencies
+npm install
+
+# Start Expo
+npm start
+
+
+
