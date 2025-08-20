@@ -1,12 +1,5 @@
-FROM node:18-alpine AS builder
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-FROM nginx:alpine
-COPY --from=builder /app/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/nginx.conf
+# admin/Dockerfile
+FROM nginx:alpine 
+COPY build/ /usr/share/nginx/html 
+# No custom nginx.conf — we'll use the main one later
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
