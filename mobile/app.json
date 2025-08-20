@@ -24,7 +24,8 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
-      "env": "development"
+      "env": "development",
+      "apiUrl": "http://192.168.1.100:3000"
     }
   }
 }
