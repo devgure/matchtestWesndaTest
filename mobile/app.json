@@ -1,31 +1,20 @@
 {
-  "expo": {
-    "name": "MatchAI",
-    "slug": "matchai",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+  "cli": {
+    "version": "latest"
+  },
+  "build": {
+    "development": {
+      "distribution": "internal",
+      "simulator": true
     },
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+    "preview": {
+      "android": {
+        "buildType": "apk"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "env": "development",
-      "apiUrl": "http://192.168.1.100:3000"
-    }
+    "production": {}
+  },
+  "submit": {
+    "production": {}
   }
 }
