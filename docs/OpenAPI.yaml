@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  title: MatchAI API
+  version: 1.0.0
+paths:
+  /auth/login:
+    post:
+      summary: Login with Firebase token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token: { type: string }
+      responses:
+        '200':
+          description: Success

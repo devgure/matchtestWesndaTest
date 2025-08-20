@@ -1,0 +1,109 @@
+matchai/
+├── backend/                     # NestJS + Express + Prisma + Socket.IO
+│   ├── src/
+│   │   ├── auth/                # JWT + OAuth (Google/Apple/Facebook)
+│   │   ├── user/
+│   │   ├── match/
+│   │   ├── chat/
+│   │   ├── admin/
+│   │   ├── subscription/        # Stripe webhooks
+│   │   ├── ai/                  # AI service client
+│   │   ├── socket/              # Realtime chat
+│   │   ├── prisma/              # Schema + seed
+│   │   ├── main.ts
+│   │   └── app.module.ts
+│   ├── test/
+│   │   ├── subscription.webhook.spec.ts  # Jest test
+│   ├── Dockerfile
+│   ├── docker-compose.yml
+│   ├── nest-cli.json
+│   └── package.json
+│
+├── web/                         # React Web App (PWA)
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── screens/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   ├── store/               # Redux
+│   │   ├── i18n/                # react-i18next
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   └── package.json
+│
+├── mobile/                      # React Native (Expo)
+│   ├── assets/
+│   ├── components/
+│   │   ├── CardStack.tsx        # Tinder swipe
+│   │   ├── PhotoUploader.tsx    # Camera + facial upload
+│   │   └── ChatBubble.tsx
+│   ├── screens/
+│   │   ├── DiscoverScreen.tsx
+│   │   ├── ChatScreen.tsx
+│   │   ├── ProfileScreen.tsx
+│   │   └── AuthScreen.tsx
+│   ├── navigation/
+│   │   ├── AppNavigator.tsx     # React Navigation
+│   │   └── RouteTypes.ts
+│   ├── services/
+│   │   ├── api.ts               # Axios instance
+│   │   ├── authService.ts
+│   │   └── matchService.ts
+│   ├── hooks/
+│   │   ├── useNearbyMatches.ts
+│   │   └── useSocket.ts
+│   ├── app.json
+│   ├── App.tsx
+│   ├── babel.config.js
+│   ├── eas.json
+│   ├── Dockerfile
+│   └── package.json
+│
+├── admin/                       # Admin Dashboard (React + Material UI)
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── UserList.tsx
+│   │   │   ├── Reports.tsx
+│   │   │   ├── Subscriptions.tsx
+│   │   │   └── Dashboard.tsx
+│   │   ├── components/
+│   │   ├── services/
+│   │   └── App.tsx
+│   ├── Dockerfile
+│   └── package.json
+│
+├── ai-service/                  # Python FastAPI AI Microservice
+│   ├── src/
+│   │   ├── main.py              # Facial recognition
+│   │   ├── model/               # Trained model
+│   │   └── training/            # Jupyter notebook
+│   │       └── train_face_model.ipynb
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   └── pyproject.toml
+│
+├── shared/                      # Shared types, utils, i18n
+│   ├── types/
+│   │   └── user.d.ts
+│   ├── utils/
+│   │   └── location.ts
+│   └── i18n/
+│       └── en.json
+│
+├── tests/                       # E2E + Unit
+│   ├── jest.config.ts
+│   ├── cypress/
+│   │   └── e2e/
+│   │       └── auth.cy.ts
+│
+├── docs/
+│   ├── OpenAPI.yaml             # Swagger spec
+│   ├── DEPLOYMENT.md            # Deployment guide
+│   └── OAUTH_SETUP.md           # Google/Apple OAuth guide
+│
+├── .env.example
+├── docker-compose.yml
+└── README.md

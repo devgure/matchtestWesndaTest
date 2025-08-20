@@ -1,0 +1,32 @@
+{
+  "info": {
+    "name": "MatchAI API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login with Firebase",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\": \"your-firebase-id-token\"}"
+        },
+        "url": "http://localhost:3000/auth/login"
+      }
+    },
+    {
+      "name": "Refresh Token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"refresh_token\": \"your-jwt-refresh-token\"}"
+        },
+        "url": "http://localhost:3000/auth/refresh"
+      }
+    }
+  ]
+}
