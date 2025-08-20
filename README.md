@@ -75,9 +75,22 @@ docker-compose up -d
 
 
 
+
+
 #  Production code 
 npx prisma migrate dev --name init 
 npx prisma db seed
+
+#  Start Mobile App
+bash
+
+cd mobile
+
+# Install dependencies
+npm install
+
+# Start Expo
+npm start
 
 
 
@@ -295,6 +308,7 @@ Visit: http://localhost
 npm install tweetnacl utf8\
 
 deployment/ssl-setup.sh sudo apt install certbot python3-certbot-nginx -y sudo certbot --nginx -d api.yourapp.com -d app.yourapp.com
+
 
 
 
