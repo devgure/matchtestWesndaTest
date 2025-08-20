@@ -5,27 +5,30 @@
     "build": "nest build",
     "start": "nest start",
     "start:dev": "nest start --watch",
-    "prisma:generate": "npx prisma generate",
+    "prisma": "npx prisma",
     "prisma:migrate": "npx prisma migrate dev --name init",
-    "prisma:seed": "npx prisma db seed"
+    "prisma:generate": "npx prisma generate"
   },
   "dependencies": {
-    "@nestjs/common": "^10",
-    "@nestjs/core": "^10",
-    "@nestjs/platform-express": "^10",
-    "@nestjs/jwt": "^10",
-    "@nestjs/passport": "^10",
-    "@prisma/client": "^5",
-    "firebase-admin": "^11",
-    "passport": "^0.6",
-    "passport-jwt": "^4",
-    "redis": "^4",
-    "@nestjs/websockets": "^10",
-    "socket.io": "^4"
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/jwt": "^10.0.0",
+    "@nestjs/passport": "^10.0.0",
+    "@nestjs/websockets": "^10.0.0",
+    "@prisma/client": "^5.0.0",
+    "firebase-admin": "^11.0.0",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
+    "redis": "^4.6.0",
+    "socket.io": "^4.7.0"
   },
   "devDependencies": {
-    "@nestjs/cli": "^10",
-    "@prisma/client": "^5",
-    "prisma": "^5"
+    "@nestjs/cli": "^10.0.0",
+    "@types/redis": "^4.0.0",
+    "prisma": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
